@@ -16,3 +16,4 @@ client = MongoClient(url)
 # Connect pytech database
 db = client.pytech
 
+#test
