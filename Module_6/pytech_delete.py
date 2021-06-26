@@ -53,7 +53,24 @@ feanor =  {
     ]
 }
 
+# insert statements with output 
+print("\n  --INSERT STATEMENTS --")
 
+feanor_student_id = students.insert_one(feanor).inserted_id
+print(f"  Inserted student record Feanor Curufinwe into the students collection with student_id " + str(feanor['student_id']) + ".")
+
+# Display new studnet
+doc = db.students.find_one({"student_id": "1010"})
+print("\n  -- DISPLAYING STUDENT TEST DOC -- ")
+print("  Student ID: " + doc["student_id"] + "\n  First Name: " + doc["first_name"] + "\n  Last Name: " + doc["last_name"])
+
+# Delete new studnet
+delete = db.students.delete_one({"student_id": "1010"})
+
+# Display message.
+print(f"\n -- Found Documents --")
+for doc in docs:
+    print("  Student ID: " + doc["student_id"] + "\n  First Name: " + doc["first_name"] + "\n  Last Name: " + doc["last_name"] + "\n")
 
 # show an exit message
 input("\n  End of program, press any key to exit... ")
