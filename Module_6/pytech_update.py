@@ -16,4 +16,22 @@ client = MongoClient(url)
 # Connect pytech database
 db = client.pytech
 
-# testing push change to repository.
+# Find documents
+docs = db.students.find({})
+
+# Display message.
+print(f"\n -- Found Documents --")
+for doc in docs:
+    print("  Student ID: " + doc["student_id"] + "\n  First Name: " + doc["first_name"] + "\n  Last Name: " + doc["last_name"] + "\n")
+
+# Update one record.
+#myQuery = {"student_id": }
+result = db.students.update_one({"student_id": "1007"}, {"$set": {"last_name": "Oaken"}})
+
+# Find one document within the collection and display it
+doc = db.students.find_one({"student_id": "1007"})
+print("\n  -- DISPLAYING STUDENT TEST DOC -- ")
+print("  Student ID: " + doc["student_id"] + "\n  First Name: " + doc["first_name"] + "\n  Last Name: " + doc["last_name"])
+
+# show an exit message
+input("\n  End of program, press any key to exit... ")
