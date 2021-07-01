@@ -44,27 +44,27 @@ CREATE TABLE player (
 
 -- insert team records
 INSERT INTO team(team_name, mascot)
-    VALUES('Team Gandalf', 'White Wizards');
+    VALUES('Team Rohan', 'White Horse');
 
 INSERT INTO team(team_name, mascot)
-    VALUES('Team Sauron', 'Orcs');
+    VALUES('Team Gondor', 'White Tree');
 
 
 -- insert player records 
 INSERT INTO player(first_name, last_name, team_id) 
-    VALUES('Thorin', 'Oakenshield', (SELECT team_id FROM team WHERE team_name = 'Team Gandalf'));
+    VALUES('Eowyn', 'Eorl', (SELECT team_id FROM team WHERE team_name = 'Team Rohan'));
 
 INSERT INTO player(first_name, last_name, team_id)
-    VALUES('Bilbo', 'Baggins', (SELECT team_id FROM team WHERE team_name = 'Team Gandalf'));
+    VALUES('Theoden', 'Eorl', (SELECT team_id FROM team WHERE team_name = 'Team Rohan'));
 
 INSERT INTO player(first_name, last_name, team_id)
-    VALUES('Frodo', 'Baggins', (SELECT team_id FROM team WHERE team_name = 'Team Gandalf'));
+    VALUES('Theodred', 'Eorl', (SELECT team_id FROM team WHERE team_name = 'Team Rohan'));
 
 INSERT INTO player(first_name, last_name, team_id) 
-    VALUES('Saruman', 'The White', (SELECT team_id FROM team WHERE team_name = 'Team Sauron'));
+    VALUES('Aragorn', 'Telcontar', (SELECT team_id FROM team WHERE team_name = 'Team Gondor'));
 
 INSERT INTO player(first_name, last_name, team_id)
-    VALUES('Angmar', 'Witch-king', (SELECT team_id FROM team WHERE team_name = 'Team Sauron'));
+    VALUES('Faramir', 'Son of Denethor.', (SELECT team_id FROM team WHERE team_name = 'Team Gondor'));
 
 INSERT INTO player(first_name, last_name, team_id)
-    VALUES('Azog', 'The Defiler', (SELECT team_id FROM team WHERE team_name = 'Team Sauron')); 
+    VALUES('Boromir', 'Son of Denethor', (SELECT team_id FROM team WHERE team_name = 'Team Gondor')); 
