@@ -18,6 +18,7 @@ config = {
     "raise_on_warnings": True
 }
 
+""" Test connection to mysql"""
 try:
     db = mysql.connector.connect(**config) # connect to the pysports database 
 
