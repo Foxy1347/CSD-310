@@ -1,7 +1,7 @@
-"""Title: pysports_join_queries.py
+"""Title: Milestone_3_script.py
     Author: Shane Fox
-    Date: 7/6/2021
-    Description: Test program for joining the player and team tables"""
+    Date: 7/15/2021
+    Description: Call and return tables for all three reports."""
 
 """ import statements """
 import mysql.connector
